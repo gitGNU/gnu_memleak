@@ -1,0 +1,11 @@
+memleak (0-3) unstable; urgency=low
+
+  * Updated Scenario Based Implementation (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+
+ -- Prateek Mathur <prateek.m@samsung.com>  Mon, 19 Jul 2010 12:00:22 +0530
+memleak (0-1) unstable; urgency=low
+
+  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+
+ -- Ravi Sankar Guntur <ravi.g@samsung.com>  Thu, 15 Apr 2010 14:42:22 +0530
+

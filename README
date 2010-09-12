@@ -1,0 +1,96 @@
+Memleak Features:
+================
+Memleak Detects memory leaks for C and C++ programs
+Provides leak report with backtrace
+
+How to compile, install Memleak:
+===============================
+Dependencies:
+Memleak depends on inotify.
+Inotify  was  merged  into the 2.6.13 Linux kernel.
+The required library interfaces were added to glibc in version 2.4
+
+Supported Platforms:
+===================
+Tested on ARM & i386 GNU/Linux systems. 
+
+How to compile:
+==============
+make build
+
+How to install:
+==============
+sudo make install
+
+Compilation requirements for programs:
+=====================================
+To get meaningful backtrace, the application
+and its binaries should be compiled with “-rdynamic” and no “-O2”.
+Stripped binaries can be used.
+Supports scenario based profiling also along with full profile.
+
+Memleak runtime dependencies:
+============================
+Memleak depends on libc to generate backtrace. 
+So libc backtrace limitation are applicable for Memleak as well.
+They are,
+  Omission of the frame pointers (as implied by O2 optimization level)
+  Inline functions do not have stack frames.
+  Tail-call optimization causes one stack frame to replace another.
+  Names of "static" functions are not exposed, and won't be available in
+  the backtrace.
+
+How to run the programs under Memleak:
+=====================================
+Run the debugged application under memleak
+ For Scenario based:
+   $run-with-memleak.sh --scenario-mode <application>
+ For Full Mode (No change in default behaviour)
+   $run-with-memleak.sh --full-mode <application>
+Test your application for memory leaks.
+Leak result file will be saved to memleak.log.<pid>.
+Log file contains leak results along with process map
+information. 
+
+Users can now test for memory leaks that occur within a
+ certain use case or scenario.
+For example if one needs to know that what are all the leaks happening
+between the point when user presses OK button in some application and
+response is displayed back on the screen.
+To indicate the start and end of a scenario following steps must be performed:
+    Run the application as mentioned in previous slide with ‘--scenario-mode’ option.
+    Whenever you need to start profiling of a scenario create a file ‘scenario_begin’
+            touch scenario_begin
+    At the end of scenario create a file scenario_end
+            touch scenario_end
+    The same file will be appended for all the later scenarios (if any). The files which
+    you created would be automatically deleted so that you can start again.
+    You can test for multiple scenarios one after the other.
+
+How to analyse the log:
+======================
+Demangled C++ fucniton name using c++filt.
+When backtrace information does not contain function name,
+then use addr2line to get the source code line number and function name.
+Process maps information is available in log file.
+Offset is calculated as function VMA – DSO base address.
+
+/*
+  Memleak: Detects memory leaks in C or C++ programs
+  Copyright (C) 2010 Ravi Sankar Guntur <ravi.g@samsung.com>
+  Copyright (C) 2010 Prateek Mathur <prateek.m@samsung.com>
+  
+  Memleak is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Lesser General Public License as
+  published by the Free Software Foundation, either version 3
+  of the License, or any later version.
+ 
+  Memleak is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with Memleak.  If not, see <http://www.gnu.org/licenses/>.
+
+*/

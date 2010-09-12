@@ -1,0 +1,12 @@
+Source: memleak
+Priority: extra
+Maintainer: Ravi Sankar Guntur <ravi.g@samsung.com>
+Build-Depends: debhelper (>= 5)
+Standards-Version: 3.7.2
+Section: libs
+
+Package: memleak-lib
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: utility to detect memory leaks in a C or C++ programs

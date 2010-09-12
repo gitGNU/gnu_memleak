@@ -1,0 +1,11 @@
+Source: Memleak
+Priority: extra
+Maintainer: Ravi Sankar Guntur <ravi.g@samsung.com>
+Build-Depends: debhelper (>= 5)
+Standards-Version: 3.7.2
+Section: libs
+Package: memleak-0.2
+Architecture: all
+Depends: 
+Description: Memleak Tool 
+Version: 0.2

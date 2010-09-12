@@ -1,0 +1,36 @@
+memleak (0-4) unstable; urgency=low
+
+  * Fixed licesne & supporitve docs
+
+ -- Ravi Sankar Guntur <ravisankar.g@gmail.com> Sat 11 Sep 18:49:02 +0530
+memleak (0-3) unstable; urgency=low
+
+  * Updated Scenario Based Implementation
+
+ -- Prateek Mathur <prateek.m@samsung.com>  Mon, 19 Jul 2010 12:00:22 +0530
+memleak (0-1) unstable; urgency=low
+
+  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+
+ -- Ravi Sankar Guntur <ravi.g@samsung.com>  Thu, 15 Apr 2010 14:42:22 +0530
+
+/*
+  Memleak: Detects memory leaks in C or C++ programs
+  Copyright (C) 2010 Ravi Sankar Guntur <ravi.g@samsung.com>
+  Copyright (C) 2010 Prateek Mathur <prateek.m@samsung.com>
+
+  Memleak is free software: you can redistribute it and/or modify
+  it under the terms of the GNU Lesser General Public License as
+  published by the Free Software Foundation, either version 3
+  of the License, or any later version.
+
+  Memleak is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with Memleak.  If not, see <http://www.gnu.org/licenses/>.
+
+*/
+
